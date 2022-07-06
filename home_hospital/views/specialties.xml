@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_specialty_tree" model="ir.ui.view">
+        <field name="name">config.specialty.tree</field>
+        <field name="model">cf.hospital.specialties</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!--<field name="id_web"/>-->
+                <field name="name"/>
+
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_specialty_form" model="ir.ui.view">
+        <field name="name">config.specialty.form</field>
+        <field name="model">cf.hospital.specialties</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <!--<field name="name_ar"/>-->
+                            <!--<field name="name_eng"/>-->
+                            <!--<field name="slot_time"/>-->
+                            <!--<field name="over_time"/>-->
+                            <field name="parent_id"/>
+                            <field name="admin_id"/>
+                            <field name="image"/>
+                        </group>
+                        <group>
+                            <field name="image_app"/>
+                            <field name="note"/>
+                            <!--<field name="admin_id"/>-->
+                            <field name="disabled" widget="boolean_toggle"/>
+                            <!--<field name="created_at"/>-->
+                            <!--<field name="updated_at"/>-->
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="speciality_action" model="ir.actions.act_window">
+        <field name="name">Speciality</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.specialties</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Speciality
+            </p>
+        </field>
+    </record>
+
+</odoo>

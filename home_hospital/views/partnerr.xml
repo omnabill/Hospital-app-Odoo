@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_drivers_tree" model="ir.ui.view">
+         <field name="name">config.partnerrs.tree</field>
+         <field name="model">res.partner</field>
+         <field name="arch" type="xml">
+            <tree>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_drivers_form" model="ir.ui.view">
+        <field name="name">config.partnerrs.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+         <field name="arch" type="xml">
+                    <xpath expr="//field[@name='company_type']" position="attributes">
+                             <attribute name="invisible">1</attribute>
+                    </xpath>
+
+                    <xpath expr="//field[@name='vat']" position="after">
+                        <field name="Record_Type"/>
+                    </xpath>
+
+                    <xpath expr="//field[@name='vat']" position="after">
+                        <field name="degree2" widget="char"/>
+                    </xpath>
+
+                    <xpath expr="//field[@name='vat']" position="after">
+                        <field name="degree" widget="char"/>
+                    </xpath>
+
+
+
+                    <xpath expr="//page[@name='internal_notes']" position="after">
+                        <page name="Nurses_Data" string="Nurses_Data">
+                            <group>
+                            <field name="notes1"/>
+                            </group>
+                        </page>
+                    </xpath>
+
+
+                    <xpath expr="//page[@name='Nurses_Data']" position="after">
+                        <page name="Doctor_Data" string="Doctor_Data">
+                            <group>
+                              <field name="country_id"/>
+                              <field name="specialty" domain="[('disabled', '=', 0)]"/>
+                              <field name="cv"/>
+                              <field name="photo"/>
+                              <field name="description"/>
+                              <field name="available_time"  />
+                            </group>
+                        </page>
+                    </xpath>
+
+             <xpath expr="//page[@name='Nurses_Data']" position="attributes">
+                 <attribute name="attrs">{'invisible':[('Record_Type','!=', '2')]}</attribute>
+             </xpath>
+
+             <xpath expr="//page[@name='Doctor_Data']" position="attributes">
+                 <attribute name="attrs">{'invisible':[('Record_Type','!=', '1')]}</attribute>
+             </xpath>
+
+         </field>
+    </record>
+
+    <record id="cf_hospital_drivers_action" model="ir.actions.act_window">
+        <field name="name">Drivers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'default_Record_Type':'3'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Drivers
+            </p>
+        </field>
+    </record>
+
+     <record id="cf_hospital_nurses_action" model="ir.actions.act_window">
+        <field name="name">Nurse</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'default_Record_Type':'2'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Nurse
+            </p>
+        </field>
+    </record>
+
+    <record id="cf_hospital_doctors_action" model="ir.actions.act_window">
+        <field name="name">Doctor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'default_Record_Type':'1'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Doctor
+            </p>
+        </field>
+    </record>
+
+</odoo>
+

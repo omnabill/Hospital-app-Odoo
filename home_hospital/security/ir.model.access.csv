@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cf_hospital_specialties,access.cf.hospital.specialties,model_cf_hospital_specialties,,1,1,1,1
+access_cf_hospital_cities,access.cf.hospital.cities,model_cf_hospital_cities,,1,1,1,1
+access_cf_hospital_medicaltype,access.cf.hospital.medicaltype,model_cf_hospital_medicaltype,,1,1,1,1
+access_cf_hospital_physician,access.cf.hospital.physician,model_cf_hospital_physician,,1,1,1,1
+access_cf_hospital_governorates,access.cf.hospital.governorates,model_cf_hospital_governorates,,1,1,1,1
+access_cf_hospital_pricelist,access.cf.hospital.pricelist,model_cf_hospital_pricelist,,1,1,1,1
+access_cf_hospital_packages,access.cf.hospital.packages,model_cf_hospital_packages,,1,1,1,1
+access_cf_hospital_devices,access.cf.hospital.devices,model_cf_hospital_devices,,1,1,1,1
+access_cf_hospital_nursesheet,access.cf.hospital.nursesheet,model_cf_hospital_nursesheet,,1,1,1,1
+access_cf_hospital_service,access.cf.hospital.service,model_cf_hospital_service,,1,1,1,1
+access_cf_hospital_category,access.cf.hospital.category,model_cf_hospital_category,,1,1,1,1
+access_cf_hospital_request,access.cf.hospital.request,model_cf_hospital_request,,1,1,1,1
+access_cf_hospital_company,access.cf.hospital.company,model_cf_hospital_company,,1,1,1,1

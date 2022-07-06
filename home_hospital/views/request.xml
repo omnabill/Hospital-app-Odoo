@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_pricelist_tree" model="ir.ui.view">
+        <field name="name">config.request.tree</field>
+        <field name="model">cf.hospital.request</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cities_form" model="ir.ui.view">
+        <field name="name">config.request.form</field>
+        <field name="model">cf.hospital.request</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="doctor_id" domain="[('Record_Type', '=', '1')]"/>
+                            <field name="nurse_id" domain="[('Record_Type', '=', '2')]"/>
+                            <field name="driver_id" domain="[('Record_Type', '=', '3')]"/>
+                            <field name="fullname"/>
+                            <field name="name_caregiver"/>
+                            <field name="gender"/>
+                            <field name="location"/>
+                            <field name="governorate_id"/>
+                            <field name="city_id"/>
+                            <field name="code_zone_patient_id"/>
+                            <field name="bed_number"/>
+                            <field name="symptoms"/>
+                            <field name="doc_note"/>
+                        </group>
+                            <group>
+                            <field name="physician"/>
+                            <field name="visit_time_day"/>
+                            <field name="visit_time_from"/>
+                            <field name="visit_time_to"/>
+                            <field name="expectation_cost"/>
+                            <field name="real_cost"/>
+                            <field name="medical_type_id" domain="[('disabled', '=', 0)]"/>
+                            <field name="price_list_id" domain="[('disabled', '=', 0)]"/>
+                            <field name="bill_serial"/>
+                            <field name="pay_or_not"/>
+                            <field name="come_from"/>
+                            <field name="reason_out"/>
+                            <field name="Long"/>
+                            <field name="date_out"/>
+                            <field name="date_in"/>
+                        </group>
+                        <notebook>
+                            <page string="ABC" name="contact_addresses">
+                                <group>
+                                <field name="adress"/>
+                                <field name="adress2"/>
+                                <field name="land_mark"/>
+                                <field name="floor"/>
+                                <field name="apartment"/>
+                                <field name="phone"/>
+                                <field name="phone2"/>
+                                <field name="whatapp" widget="char"/>
+                                <field name="whatapp2" widget="char"/>
+                                <field name="whatsApp_group"/>
+                                <field name="age"/>
+                                <field name="type"/>
+                                <field name="covid19"/>
+                                <field name="corporate_id"/>
+                                <field name="specialty_id" domain="[('disabled', '=', 0)]"/>
+                                <field name="service_id" domain="[('disabled', '=', 0)]"/>
+                                <field name="package_id" domain="[('disabled', '=', 0)]"/>
+                                </group>
+                            </page>
+
+                            <page string="DATA_BIG" name="DATA_BIG">
+                                <group>
+                                    <field name="diagnose"/>
+                                    <field name="history"/>
+                                    <field name="co"/>
+                                    <field name="end_service_date"/>
+                                    <field name="schedule_date"/>
+                                    <field name="nurse_evaluation"/>
+                                    <field name="satisfaction"/>
+                                    <field name="nomination_rate"/>
+                                    <field name="speed_services_overall"/>
+                                    <field name="reason_cancel"/>
+                                    <field name="feedback"/>
+                                    <field name="doc_rate"  widget="char"/>
+                                    <field name="user_rate"  widget="char"/>
+                                    <field name="opd_admin_id"/>
+                                    <field name="opd2_admin_id"/>
+                                    <field name="cc_admin_id"/>
+                                    <field name="admin_id_in_out"/>
+                                    <field name="status_doc"/>
+                                    <field name="status_user"/>
+                                    <field name="status_cc"/>
+                                    <field name="status_in_out"/>
+                                </group>
+                            </page>
+
+                        </notebook>
+                            <!--<field name="admin_id"/>-->
+
+
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="cf_hospital_request_action" model="ir.actions.act_window">
+        <field name="name">Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Request
+            </p>
+        </field>
+    </record>
+
+</odoo>
+

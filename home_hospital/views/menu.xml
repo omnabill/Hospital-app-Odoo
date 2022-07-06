@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <menuitem id="hospital_root"
+              name="Hospital"
+              sequence="10"/>
+
+    <!--  2th lvl Configuration  -->
+    <menuitem id="hospital_Config_root"
+              name="Configuration"
+              parent="hospital_root"
+              sequence="1"/>
+    <menuitem id="hospital_process"
+              name="Process"
+              parent="hospital_root"
+              sequence="2"/>
+    <menuitem id="hospital_reports"
+              name="Reports"
+              parent="hospital_root"
+              sequence="3"/>
+
+    <menuitem id="Config_Masters"
+              name="Masters"
+              parent="hospital_Config_root"
+              action=""
+              sequence="1"/>
+
+    <menuitem id="Config_Resources"
+              name="Resources"
+              parent="hospital_Config_root"
+              action=""
+              sequence="2"/>
+
+    <menuitem id="Config_configurations"
+              name="Configurations"
+              parent="hospital_Config_root"
+              action=""
+              sequence="3"/>
+
+    <menuitem id="Config_speciality"
+              name="Speciality"
+              parent="Config_Masters"
+              action="speciality_action"
+              sequence="1"/>
+
+    <menuitem id="Config_doctor"
+              name="Doctor"
+              parent="Config_Resources"
+              action="cf_hospital_doctors_action"
+              sequence="2"/>
+
+    <menuitem id="Config_cities"
+              name="Cities"
+              parent="Config_Masters"
+              action="cf_hospital_citiy_action"
+              sequence="3"/>
+
+    <menuitem id="Config_Medical_Type"
+              name="Medical Type"
+              parent="Config_Masters"
+              action="cf_hospital_MedicalType_action"
+              sequence="4"/>
+     <menuitem id="Config_Physician"
+              name="Physician"
+              parent="Config_Resources"
+              action="cf_hospital_physician_action"
+              sequence="5"/>
+    <menuitem id="Config_Governorates"
+              name="Governorates"
+              parent="Config_Masters"
+              action="cf_hospital_governorates_action"
+              sequence="6"/>
+    <menuitem id="Config_PriceList"
+              name="Price List"
+              parent="Config_configurations"
+              action="cf_hospital_pricelist_action"
+              sequence="7"/>
+    <menuitem id="Config_Packages"
+              name="Packages"
+              parent="Config_configurations"
+              action="cf_hospital_packages_action"
+              sequence="8"/>
+    <menuitem id="Config_Devices"
+              name="Devices"
+              parent="Config_Resources"
+              action="cf_hospital_devices_action"
+              sequence="9"/>
+    <menuitem id="Config_NurseSheet"
+              name="Nurse Sheet"
+              parent="hospital_process"
+              action="cf_hospital_nursesheet_action"
+              sequence="10"/>
+
+    <menuitem id="Config_Service"
+              name="Service"
+              parent="Config_configurations"
+              action="cf_hospital_service_action"
+              sequence="10"/>
+    <menuitem id="Config_Category"
+              name="Category"
+              parent="Config_configurations"
+              action="cf_hospital_category_action"
+              sequence="11"/>
+        <menuitem id="Config_Drivers"
+              name="Drivers"
+              parent="Config_Resources"
+              action="cf_hospital_drivers_action"
+              sequence="12"/>
+        <menuitem id="Config_Nurses"
+              name="Nurses"
+              parent="Config_Resources"
+              action="cf_hospital_nurses_action"
+              sequence="13"/>
+        <menuitem id="Config_Requests"
+              name="Request"
+              parent="hospital_process"
+              action="cf_hospital_request_action"
+              sequence="14"/>
+        <menuitem id="Config_Companies"
+              name="Company"
+              parent="Config_Resources"
+              action="cf_hospital_company_action"
+              sequence="14"/>
+
+
+</odoo>

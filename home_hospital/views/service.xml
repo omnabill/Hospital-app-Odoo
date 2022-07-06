@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_service_tree" model="ir.ui.view">
+        <field name="name">config.service.tree</field>
+        <field name="model">cf.hospital.service</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <field name="name"/>
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_service_form" model="ir.ui.view">
+        <field name="name">config.service.form</field>
+        <field name="model">cf.hospital.service</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="category_id"/>
+                            <field name="image"/>
+                        </group>
+                        <group>
+                            <field name="type"  eval="[ (1, ref('stage_lead1')), (2, ref('stage_lead2')),
+                                    (3, ref('stage_lead3'))"/>
+                            <field name="specialty_id"/>
+                            <field name="admin_id"/>
+
+                        </group>
+                    </group>
+                    <!--<group>-->
+                        <!--<field name="site" widget="boolean_toggle"/>  <field name="disabled" widget="boolean_toggle"/>-->
+                    <!--</group>-->
+
+                    <group>
+                            <field name="site" class="oe_inline" widget="boolean_toggle"/>
+                            <field name="disabled" class="oe_inline" widget="boolean_toggle"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="cf_hospital_service_action" model="ir.actions.act_window">
+        <field name="name">Service</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Service
+            </p>
+        </field>
+    </record>
+
+</odoo>

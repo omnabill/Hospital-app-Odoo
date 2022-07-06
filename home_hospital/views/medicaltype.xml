@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_MedicalType_tree" model="ir.ui.view">
+        <field name="name">config.MedicalType.tree</field>
+        <field name="model">cf.hospital.medicaltype</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_MedicalType_form" model="ir.ui.view">
+        <field name="name">config.MedicalType.form</field>
+        <field name="model">cf.hospital.medicaltype</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <!--<field name="name_eng"/>-->
+                            <field name="price_list_id"/>
+                            <field name="admin_id"/>
+                        </group>
+                        <group>
+
+                            <field name="disabled" widget="boolean_toggle"/>
+                            <field name="status"  eval="[ (4, ref('stage_lead1')), (4, ref('stage_lead2')),
+                                    (4, ref('stage_lead3')), (4, ref('stage_lead4'))"/>
+
+                            <!--<field name="created_at"/>-->
+                            <!--<field name="updated_at"/>-->
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="cf_hospital_MedicalType_action" model="ir.actions.act_window">
+        <field name="name">MedicalType</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.medicaltype</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Medical Type
+            </p>
+        </field>
+    </record>
+
+</odoo>

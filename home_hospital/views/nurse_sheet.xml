@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_nursesheet_tree" model="ir.ui.view">
+        <field name="name">config.nursesheet.tree</field>
+        <field name="model">cf.hospital.nursesheet</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <field name="shift_type"/>
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_nursesheet_form" model="ir.ui.view">
+        <field name="name">config.nursesheet.form</field>
+        <field name="model">cf.hospital.nursesheet</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="shift_type" widget="char"/>
+                            <field name="shift_date"/>
+                            <field name="investigation"/>
+                            <field name="oxygen"/>
+                            <field name="situation"/>
+                            <field name="issues"/>
+                        </group>
+                        <group>
+
+                            <field name="remarks"/>
+                            <field name="notes"/>
+                            <field name="add_devices"/>
+                            <field name="request_id"/>
+                            <field name="admin_id"/>
+
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="cf_hospital_nursesheet_action" model="ir.actions.act_window">
+        <field name="name">Nurse Sheet</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.nursesheet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Nurse Sheet
+            </p>
+        </field>
+    </record>
+
+</odoo>

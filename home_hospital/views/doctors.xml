@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_doctor_tree" model="ir.ui.view">
+        <field name="name">config.doctor.tree</field>
+        <field name="model">cf.hospital.doctors</field>
+        <field name="arch" type="xml">
+            <tree>
+
+<field name="specialty"/>
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_doctor_form" model="ir.ui.view">
+        <field name="name">config.doctor.form</field>
+        <field name="model">cf.hospital.doctors</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <!--<field name="user_id"/>-->
+                            <field name="specialty" domain="[('disabled', '=', 0)]"/>
+                            <!--<field name="slot_time"/>-->
+                            <!--<field name="over_time"/>-->
+                            <field name="degree" widget="char"/>
+                            <field name="cv"/>
+                            <field name="phone1"/>
+                            <field name="phone2"/>
+                        </group>
+                        <group>
+                            <field name="country_id"/>
+                            <field name="photo"/>
+                            <field name="description"/>
+                            <field name="available_time"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+</odoo>

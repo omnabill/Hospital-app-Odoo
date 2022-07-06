@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_companies_tree" model="ir.ui.view">
+        <field name="name">config.companies.tree</field>
+        <field name="model">cf.hospital.company</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_companies_form" model="ir.ui.view">
+        <field name="name">config.companies.form</field>
+        <field name="model">cf.hospital.company</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="org_name"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="website"/>
+                            <field name="contact_person_name"/>
+                            <field name="registration_num"/>
+                        </group>
+                        <group>
+                            <field name="tax_certificate_num"/>
+                            <field name="type"/>
+                            <field name="pay"/>
+                            <field name="description"/>
+                            <field name="price_list_id"/>
+                            <field name="admin_id"/>
+
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="cf_hospital_company_action" model="ir.actions.act_window">
+        <field name="name">Company</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.company</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Company
+            </p>
+        </field>
+    </record>
+
+</odoo>

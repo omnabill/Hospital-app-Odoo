@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="view_cities_tree" model="ir.ui.view">
+        <field name="name">config.cities.tree</field>
+        <field name="model">cf.hospital.cities</field>
+        <field name="arch" type="xml">
+            <tree>
+                    <field name="governorate_id"/>
+                    <field name="city_name"/>
+                <!--widget="boolean_toggle"-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cities_form" model="ir.ui.view">
+        <field name="name">config.cities.form</field>
+        <field name="model">cf.hospital.cities</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="governorate_id"/>
+                            <field name="city_name"/>
+                            <!--<field name="city_name_ar"/>-->
+                            <!--<field name="city_name_en"/>-->
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <!--<field name="message_follower_ids"/>-->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="cf_hospital_citiy_action" model="ir.actions.act_window">
+        <field name="name">cities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cf.hospital.cities</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create cities
+            </p>
+        </field>
+    </record>
+
+</odoo>
